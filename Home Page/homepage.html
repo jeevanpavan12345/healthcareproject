@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayapadma Clinic</title>
+</head>
+<style>
+   .header {
+    padding: 5px;
+    width: 10%;
+    display: inline-block;
+    border: 1px solid;
+    background-color: lightcyan;
+    text-align: center;
+    } 
+    .slideshow-container {
+        width: 600px;
+        position: relative;
+        margin: auto;
+    }
+    .img2 {
+        height: 345px;
+    }
+    .img4 {
+        height: 345px;  
+    }
+    .height {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        height: 280px;
+        width: 300px;
+        margin: auto;
+    }
+    .img1 {
+        height: 169px;
+    
+    }
+    input[type=button] {
+        border: 2px solid lightblue;
+        height: 30px;
+        background-color: lightgreen;
+    }
+    input[type=button]:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    .textnumbers {
+        padding: 8px 12px;
+        position: absolute;
+        color: white;
+    }
+    @media screen and (max-width:600px) {
+        .header {
+            width: 200px;
+        }
+    }
+    @media screen and (max-width:600px) {
+    .slideshow-container {
+        width: 300px;
+        .img2 {
+            height: 170px;
+        }
+    }
+    .img4 {
+        height: 170px;
+    }
+    }
+    .slides-container {
+        position: relative;
+    }
+    .Slides {
+        padding: 80px;
+        text-align: center;
+    }
+    .prev, .next {
+        top: 50%;
+        position: absolute;
+        padding: 16px;
+    }
+    .next {
+        right: 0;
+    }
+    .prev:hover, .next:hover {
+        background-color: black;
+        color: white;
+    }
+    .author {
+        font-style: italic;
+    }
+</style>
+<body style="background-image: url(Images/bg.avif);">
+    <div class="header">
+        <a href="home">Home</a>
+    </div>
+    <div class="header">
+        <a href="aboutus">AboutUs</a>
+    </div>
+       <div class="header">
+        <a href="contactus">Contact Us</a>
+        
+       </div>
+       <div class="header">
+        <a href="signin">SignIn</a> 
+       </div>
+   <hr class="a">  
+<div class="slideshow-container">
+<div class="mySlides">
+<div class="textnumbers">1 / 4</div>
+<img src="Images/1.jpg" alt="" style="width: 100%;">
+</div>
+<div class="mySlides">
+    <div class="textnumbers">2 / 4</div>
+    <img src="Images/2.jpg" alt="" style="width: 100%;" class="img2">
+    </div>
+    <div class="mySlides">
+        <div class="textnumbers">3 / 4</div>
+        <img src="Images/3.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="textnumbers">4 / 4</div>
+            <img src="Images/4.jpg" alt="" style="width: 100%;" class="img4">
+            </div>
+</div>
+<br>
+<div style="text-align: center;">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+<script>
+    let slideIndex2 = 0;
+    showSlides3();
+    function showSlides3() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex2++;
+        if (slideIndex2 > slides.length) {slideIndex2 = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex2-1].style.display = "block";
+    dots[slideIndex2-1].className += " active";
+    setTimeout(showSlides3, 2000);
+}
+</script>
+<h2><center>Dr. B Shivashankar</center></h2>
+<p>Founded in the year 1990 Jayapadma Clinic has known to be Karnataka's most reputable name in the healthcare industry. Dr. B Shivashankar, a specialist <a href="http://127.0.0.1:5500/PhysicianBhadravathi/physicianbhadravathi.html"><strong>physician in Bhadravathi</strong></a>, where such a facility was much needed at the time, founded the clinic with this goal for the entire family.</p>
+<form action=""><center>
+    <input type="button" value="ReadMore">
+</center>
+<div class="slides-container">
+    <div class="Slides">
+    <q>The doctor has suggested the best medicine for Diabities</q>
+    <p class="author">Gowtham</p>
+    </div>
+    <div class="Slides">
+        <q>Jayapadma Clinic has the best Physician in Bhadravathi</q>
+        <p class="author">Umesh</p>
+        </div>
+        <div class="Slides">
+            <q>Best Physician in Bhadravathi</q>
+            <p class="author">Rahul</p>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(-1)">❯</a>
+        </div>
+        <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+            var slideIndex1 = 1;
+            showSlides(slideIndex1);
+            function plusSlides(n) {
+                showSlides(slideIndex1 += n);
+            }
+            function currentSlide(n) {
+                showSlides(slideIndex1 = n);
+            }
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("Slides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex1 = 1}
+                if (n < 1) {slideIndex1 = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < slides.dots; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex1-1].style.display = "block";
+            dots[slideIndex1-1].className += " active";
+        }
+        </script>
+<h1><center>Book an Appointment Now</center></h1>
+<div class="height">
+<div></div>
+<img src="Images/physician.jpg" alt="" class="img1">
+<h3><center>Physician</center></h3>
+<form action="">
+    <input type="button" value="BookNow" style="width: 100%;">
+</form>
+</div>
+<a href=""></a>
+</body>
+</html>
